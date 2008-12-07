@@ -1,7 +1,8 @@
 class Users < Application
   before :ensure_authenticated, :exclude=>[:new, :create, :index]
   before :authorize, :exclude=>[:new, :create, :index]
-  # provides :xml, :yaml, :js
+
+  provides :xml, :yaml, :json
 
   def index
     display '' # display... nothing.
@@ -10,20 +11,20 @@ class Users < Application
   def show(id)
     @user = User.get(id)
     raise NotFound unless @user
-    display @user
+    display @user, display_options
   end
 
   def new
     only_provides :html
     @user = User.new
-    display @user
+    display @user, display_options
   end
 
   def edit(id)
     only_provides :html
     @user = User.get(id)
     raise NotFound unless @user
-    display @user
+    display @user, display_options
   end
 
   def create(user)
@@ -45,7 +46,7 @@ class Users < Application
     if @user.update_attributes(user)
        redirect resource(@user)
     else
-      display @user, :edit
+      display @user, :edit, display_options
     end
   end
 
@@ -63,5 +64,10 @@ private
   def authorize
     user = User.get params[:id]
     raise Unauthorized.new unless user == session.user
+  end
+  
+  # Hack to ensure that datamapper does not give out your password+salt
+  def display_options
+    {:exclude=>[:salt, :crypted_password]}
   end
 end # Users

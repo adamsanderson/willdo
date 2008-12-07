@@ -12,8 +12,9 @@ require 'merb-auth-more/mixins/salted_user'
 # You will need to setup your database and create a user.
 class User
   include DataMapper::Resource
+  include DataMapper::Serialize
   include Merb::Authentication::Mixins::SaltedUser
-
+  
   property :id,    Serial
   property :email, String, :format=>:email_address
   property :login, String, :nullable=>false
@@ -25,4 +26,13 @@ class User
     login
   end
   
+protected
+  # Overide so we never return passwords
+  def properties_to_serialize(opts)
+    raise 'hi!'
+    excluded_properties = Array(options[:exclude])
+    excluded_properties << :crypted_password
+    excluded_properties << :salt
+    super(options.merge(:exclude=>excluded_properties.uniq))
+  end
 end

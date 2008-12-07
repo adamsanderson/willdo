@@ -3,7 +3,7 @@ class TodoLists < Application
   before :get_scope
   before :authorize
   
-  provides :xml, :yaml, :js
+  provides :xml, :yaml, :json
 
   def index
     @todo_lists = @user.todo_lists.to_a
