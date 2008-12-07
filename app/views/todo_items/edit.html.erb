@@ -1,0 +1,5 @@
+<h1>Edit <%= @todo_item.name %></h1>
+<%= error_messages_for @todo_item %>
+<%= form_for @todo_item, :action => resource(@user, @todo_list, @todo_item) do %>
+  <%= partial :form %>
+<% end =%>

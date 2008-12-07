@@ -1,0 +1,7 @@
+<h1>TodoLists</h1>
+<ul>
+<% @todo_lists.each do |list| %>
+  <li><%= link_to list.name, resource(@user, list) %></li>
+<% end %>
+  <li class='action'><%= link_to 'new todo list', resource(@user, :todo_lists, :new) %></li>
+</ul>

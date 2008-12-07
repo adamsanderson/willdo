@@ -1,0 +1,5 @@
+<h1>TodoList: <%= @todo_list.name %></h1>
+<%= error_messages_for @todo_list %>
+<%= form_for @todo_list, :action => resource(@user, @todo_list) do %>
+  <%= partial :form %>
+<% end =%>

@@ -1,0 +1,6 @@
+<h1>TodoList: <%= @todo_list.name %></h1>
+<ul>
+  <li><%= link_to 'View Items', resource(@user, @todo_list, :todo_items) %> (<%= @todo_list.todo_items.length %>)</li>
+  <li><%= link_to 'Edit',  resource(@user, @todo_list, :edit) %></li>
+  <li><%= delete_button resource(@user, @todo_list), 'Delete', :class=>'link' %></li>
+</ul>

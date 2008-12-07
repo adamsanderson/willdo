@@ -1,0 +1,19 @@
+<h1><%= link_to @todo_list.name, resource(@user, @todo_list) %>: <%= @todo_item.name %></h1>
+<p>
+  Is <%= @todo_item.done? ? 'done' : 'not done' %>.
+</p>
+
+<ul>
+  <li class='action'>
+  <%= form_for @todo_item, :action => resource(@user, @todo_list, @todo_item), :class=>'link_form' do %>
+    <%= hidden_field :done, :value=>!@todo_item.done? %>
+    <%= submit (!@todo_item.done?) ? 'mark done' : 'unmark done', :class=>'link' %>
+  <% end =%>
+  </li>
+  <li class='action'>
+    <%= link_to 'edit', resource(@user, @todo_list, @todo_item, :edit) %>
+  </li>
+  <li class='action'>
+    <%= delete_button resource(@user, @todo_list, @todo_item), 'Delete', :class=>'link' %>
+  </li>
+</ul>
