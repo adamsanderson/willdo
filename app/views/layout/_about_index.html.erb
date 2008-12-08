@@ -1,0 +1,14 @@
+<h4>Index</h4>
+<p>
+The root of a resource.  
+Index will generally list all of the resources for the given
+scope.
+</p>
+<dl>
+  <dt>GET</dt>
+  <dd>Gets all the resources in this scope</dd>
+  <dt>POST</dt>
+  <dd>Inserts a resource into this scope</dd>
+  <dt>Formats</dt>
+  <dd><%= self.class.provides.join(', ') %></dd>
+</dl>

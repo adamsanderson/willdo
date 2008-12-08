@@ -8,6 +8,9 @@
   <body>
     <div id='container'>
       <div id='header-container'>
+        <div id='breadcrumb'>
+          breadcrumb: <%= breadcrumb %>
+        </div>
         <%= partial 'users/header' %>
         
         <% if message[:notice] %>
@@ -20,15 +23,19 @@
     
       <div id='left-container'>
         <p>
-          WillDo is a sample app. Woohoo.
+          WillDo is a sample app demonstrating RESTful principles.
         </p>
+        <hr/>
+        
+        <%= partial "layout/about_#{action_name}" %>
+        
       </div>
       <div id='main-container'>
         <%= catch_content :for_layout %>
       </div>
       
       <div id='footer-container'>
-        Rockon!
+        
       </div>
     </div>
   </body>
