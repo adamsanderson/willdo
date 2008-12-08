@@ -8,17 +8,14 @@
   <body>
     <div id='container'>
       <div id='header-container'>
-        <% if session.user %>
-          <%= link_to session.user.name, resource(session.user) %> / <%= link_to 'Logout', '/logout' %>
-        <% else %>
-          <%= link_to 'Login', '/login' %> / <%= link_to 'Signup', '/signup' %>
-        <% end %>
-      
+        <%= partial 'users/header' %>
+        
         <% if message[:notice] %>
           <div id='message'>
             <%= message[:notice] %>
           </div>
         <% end %>
+        
       </div>
     
       <div id='left-container'>
