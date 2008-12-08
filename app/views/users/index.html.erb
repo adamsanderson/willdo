@@ -7,3 +7,6 @@
 <p>
   Heck yes you do!
 </p>
+<% if session.user %>
+  <%= link_to 'Todo Lists', resource(session.user, :todo_lists ) %>
+<% end %>

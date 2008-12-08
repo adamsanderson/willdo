@@ -25,9 +25,19 @@
         <p>
           WillDo is a sample app demonstrating RESTful principles.
         </p>
+        <p>
+          Do not expect a wonderful UI, this is meant to be a debugging
+          tool, and a starting point for applications which will consume
+          this application's REST API.
+        </p>
         <hr/>
-        
-        <%= partial "layout/about_#{action_name}" %>
+        <% begin %>
+          <%= partial "layout/about_#{action_name}" %>
+        <% rescue %>
+          <p class='note'>
+            No special notes for the '<%= action_name %>' action.
+          </p>
+        <% end %>
         
       </div>
       <div id='main-container'>

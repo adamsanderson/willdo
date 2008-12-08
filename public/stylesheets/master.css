@@ -38,6 +38,11 @@ html {
   min-height: 400px;
   margin-top: 32px;
 }
+
+#left-container *{
+  color: #666;
+}
+
 #left-container dt{
   font-weight: bold;
   padding-top: 5px;
@@ -52,8 +57,7 @@ html {
   line-height: 32px;
   font-size: 30px;
 }
-p, ul {
-  color: #000;
+p, ul, .formRow {
   line-height: 1.3em;
   padding: 5px 0px;
 }
@@ -91,6 +95,14 @@ a, .link {
 a:hover, .link:hover {
   color: #C33;
   text-decoration: underline;
+}
+
+.formRow label{
+  display: block;
+}
+
+.formRow label input{
+  display: block;
 }
 
 #footer-container {

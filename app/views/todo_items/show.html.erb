@@ -1,4 +1,4 @@
-<h1><%= link_to @todo_list.name, resource(@user, @todo_list) %>: <%= @todo_item.name %></h1>
+<h1><%= @todo_list.name %>: <%= @todo_item.name %></h1>
 <p>
   Is <%= @todo_item.done? ? 'done' : 'not done' %>.
 </p>
