@@ -8,9 +8,6 @@
   <body>
     <div id='container'>
       <div id='header-container'>
-        <div id='breadcrumb'>
-          breadcrumb: <%= breadcrumb %>
-        </div>
         <%= partial 'users/header' %>
         
         <% if message[:notice] %>
@@ -21,7 +18,11 @@
         
       </div>
     
-      <div id='left-container'>
+      <div id='info-container'>
+        <h1>About</h1>
+        <div id='breadcrumb'>
+          breadcrumb: <%= breadcrumb %>
+        </div>
         <p>
           WillDo is a sample app demonstrating RESTful principles.
         </p>
@@ -45,7 +46,9 @@
       </div>
       
       <div id='footer-container'>
-        
+        For more information on why WillDo exists, read 
+        <a href='http://endofline.wordpress.com/2008/12/01/the-new-client-side-restful-backends/'>
+          The New Client Side</a>.
       </div>
     </div>
   </body>

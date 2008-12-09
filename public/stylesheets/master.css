@@ -24,34 +24,36 @@ html {
   padding-bottom: 30px;
 }
 
-#breadcrumb{
-  float: right;
+#message{
+  margin: 5px 0px;
+  background: #eee;
 }
+
+#breadcrumb{
+  padding-bottom: 30px;
+}
+
 #breadcrumb a{
   color: #600;
   background: #fee;
 }
 
-#left-container {
-  float: left;
-  width: 196px;
-  min-height: 400px;
-  margin-top: 32px;
+#info-container {
+  float: right;
+  width: 256px;
 }
 
-#left-container *{
+#info-container *{
   color: #666;
 }
 
-#left-container dt{
+#info-container dt{
   font-weight: bold;
   padding-top: 5px;
 }
 
 #main-container {
-  margin-left: 16px;
   min-height: 400px;
-  float: left;
 }
 #main-container h1{
   line-height: 32px;
