@@ -99,11 +99,11 @@ a:hover, .link:hover {
   text-decoration: underline;
 }
 
-.formRow label{
+p label{
   display: block;
 }
 
-.formRow label input{
+p label input{
   display: block;
 }
 
