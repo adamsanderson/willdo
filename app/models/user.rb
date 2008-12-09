@@ -27,12 +27,13 @@ class User
   end
   
 protected
-  # Overide so we never return passwords
-  def properties_to_serialize(opts)
-    raise 'hi!'
-    excluded_properties = Array(options[:exclude])
-    excluded_properties << :crypted_password
-    excluded_properties << :salt
-    super(options.merge(:exclude=>excluded_properties.uniq))
-  end
+  # In future versions of datamapper, this will be possible, for
+  # now we just have to be careful in the controllers.
+  #
+  # def properties_to_serialize(opts)
+  #   excluded_properties = Array(options[:exclude])
+  #   excluded_properties << :crypted_password
+  #   excluded_properties << :salt
+  #   super(options.merge(:exclude=>excluded_properties.uniq))
+  # end
 end

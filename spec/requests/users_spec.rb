@@ -16,11 +16,6 @@ describe "resource(:users)" do
     it "responds successfully" do
       @response.should be_successful
     end
-
-    it "contains a list of users" do
-      pending
-      @response.should have_xpath("//ul")
-    end
     
   end
   
@@ -29,10 +24,10 @@ describe "resource(:users)" do
       @response = request(resource(:users))
     end
     
-    it "has a list of users" do
-      pending
-      @response.should have_xpath("//ul/li")
+    it "responds successfully" do
+      @response.should be_successful
     end
+    
   end
   
   describe "a successful POST" do
